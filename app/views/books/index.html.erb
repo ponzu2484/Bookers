@@ -1,2 +1,125 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebCampBackendNew</title>
+  </head>
+  <body>
+    <h1>Books</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>リーダブルコード</td>
+          <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
+          <td>
+            <a class="" href="">Show</a>
+          </td>
+          <td>
+            <a class="" href="">Edit</a>
+          </td>
+          <td>
+            <a class="" href="">Destroy</a>
+          </td>
+        </tr>
+        <tr>
+          <td>トラブル知らずのシステム設計</td>
+          <td>システム設計の要点を図解で説明してくれます</td>
+          <td>
+            <a class="" href="">Show</a>
+          </td>
+          <td>
+            <a class="" href="">Edit</a>
+          </td>
+          <td>
+            <a class="" href="">Destroy</a>
+          </td>
+        </tr>
+        <tr>
+          <td>たのしいRuby</td>
+          <td>Rubyの入門におすすめです</td>
+          <td>
+            <a class="" href="">Show</a>
+          </td>
+          <td>
+            <a class="" href="">Edit</a>
+          </td>
+          <td>
+            <a class="" href="">Destroy</a>
+          </td>
+        </tr>
+        <tr>
+          <td>入門Git</td>
+          <td>gitについての基本操作から内部構造まで解説してくれます</td>
+          <td>
+            <a class="" href="">Show</a>
+          </td>
+          <td>
+            <a class="" href="">Edit</a>
+          </td>
+          <td>
+            <a class="" href="">Destroy</a>
+          </td>
+        </tr>
+        <tr>
+          <td>アルゴリズム図鑑</td>
+          <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
+          <td>
+            <a class="" href="">Show</a>
+          </td>
+          <td>
+            <a class="" href="">Edit</a>
+          </td>
+          <td>
+            <a class="" href="">Destroy</a>
+          </td>
+        </tr>
+        <tr>
+          <td>達人プログラマー</td>
+          <td>プログラマ入門者は必読！</td>
+          <td>
+            <a class="" href="">Show</a>
+          </td>
+          <td>
+            <a class="" href="">Edit</a>
+          </td>
+          <td>
+            <a class="" href="">Destroy</a>
+          </td>
+        </tr>
+        <tr>
+          <td>データベース実践入門</td>
+          <td>効率的なSQL文を教えてくれます</td>
+          <td>
+            <a class="" href="">Show</a>
+          </td>
+          <td>
+            <a class="" href="">Edit</a>
+          </td>
+          <td>
+            <a class="" href="">Destroy</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="form">
+      <h2>New book</h2>
+      <%= form_with model:Book.new do |f| %>
+          <div class="field">
+            <div class="title">Title</div>
+            <%= f.text_field :title %>
+          </div>
+          <div class="field">
+            <div class="body">Body</div>
+            <%= f.text_area :body %>
+          </div>
+        <%= f.submit 'Create Book' %>
+      <% end %>
+    </div>
+  </body>
+</html>
