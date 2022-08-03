@@ -35,12 +35,16 @@
     <div class="form">
       <h2>New book</h2>
       <% if @book.errors.any? %>
-       <%= @book.errors.count %>errors prohibited this book from being saved:
-       <ul>
-         <% @book.errors.full_messages.each do |message| %>
-           <li><%= message %></li>
-          <% end %>
-       </ul>
+      <div class="error_explanation">
+        <h3>
+         <%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:
+        </h3>
+         <ul>
+           <% @book.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
+         <% end %>
+         </ul>
+      </div>
       <% end %>
       <%= form_with model: @book, url: '/books', method: :post do |f| %>
           <div class="field">
